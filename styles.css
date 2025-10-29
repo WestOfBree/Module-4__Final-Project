@@ -25,6 +25,8 @@ img{
 .section__title,
 .section__sub-title{
     line-height: 1.5;
+    display: flex;
+    justify-content: center;
 }
 .section__title{
     font-size: 57px;
@@ -69,6 +71,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    position: relative;
 }
 .nav__links{
     display: flex;
@@ -85,6 +88,34 @@ nav{
     padding: 12px 40px;
     border-radius: 50px;
     font-weight: bold;
+}
+.results__header--container{
+    position: relative;
+}
+.background__overlay{
+    background-image: url(/assets/movie-face-on-a-poster.jpg);
+    background-repeat: no-repeat;
+    background-position: 10%;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;   
+    max-height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+.background__overlay::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(41, 25, 71, .83);
+
 }
 /* 
 
