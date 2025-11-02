@@ -11,7 +11,7 @@ async function render() {
     // const movieWrapper = document.querySelector(".results__container")
     const movies = await fetch ("http://www.omdbapi.com/?i=tt3896198&apikey=29e531e2");
     const moviesData = await movies.json();
-    const movieCardHtml = moviesData.Search.map((movie) => {
+    const movieCardHtml = moviesData.map((movie) => {
       return `<div class="movie-card">
                     <div class="movie__poster"><img src="${movie.url}" alt=""></div>
                     <div class="movie__name">${movie.name}</div>
@@ -22,7 +22,7 @@ async function render() {
     .join("");
 
     console.log(movieCardHtml)
-    movieCard.innerHTML = movieCardHtml;
+    movieCard.innerHTML += movieCardHtml;
 }
 render();
 setTimeout(() => {

@@ -101,14 +101,18 @@ nav{
     max-height: 80px;
     
 }
+.results{
+    color: #fff;
+}
 .results__logo--background{
     background-color: #fff;
     border-radius: 25px;
     opacity: 50%;
-    width: 100px;
+    width: 160px;
     height: 80px;
     position: absolute;
-    z-index: 1;
+    left: -2px;
+    z-index: -1;
 }
 .nav__link--boop{
     padding: 12px 40px;
@@ -181,4 +185,32 @@ padding: 12px;
 }
 .search-bar{
     display: flex;
+}
+
+/* 
+
+MOVIE CARD STYLES
+
+*/
+.results__container{
+    display: flex;
+    position: relative;
+    max-width: 1260px;
+    margin: auto;
+    margin-top: 170px;
+}
+.movie-card{
+    max-width: calc(100% / 4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+.movie__poster,
+.movie__name,
+.movie__rating{
+    padding-bottom: 6px;
+}
+.movie__plot{
+    text-align: center;
 }
