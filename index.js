@@ -9,25 +9,19 @@ searchInput,addEventListener("input", element => {
 })
 async function render() {
     // const movieWrapper = document.querySelector(".results__container")
-    const movies = await fetch ("https://imdb.iamidiotareyoutoo.com/search?tt=tt2250912");
+    const movies = await fetch ("http://www.omdbapi.com/?i=tt3896198&apikey=29e531e2");
     const moviesData = await movies.json();
-    const movieCardHtml = moviesData.map((movie) => {
-      return `<div class="movie">
-                <figure class="movie__img--wrapper">
-                 <img class="movie__img"
-                 src="${movie.url}" alt="">
-                </figure>
-              <div class="movie__title">
-              ${movie.title}
-              </div>
-             <div class="movie__ratings">
-              ${ratingsHtml(movie.ratings)}
-              </div>
-            </div>`;
+    const movieCardHtml = moviesData.Search.map((movie) => {
+      return `<div class="movie-card">
+                    <div class="movie__poster"><img src="${movie.url}" alt=""></div>
+                    <div class="movie__name">${movie.name}</div>
+                    <div class="movie__rating">${movie.contentRating}</div>
+                    <div class="movie__plot">${movie.description}</div>
+                </div>`;
     })
     .join("");
 
-    console.log(moviesData)
+    console.log(movieCardHtml)
     movieCard.innerHTML = movieCardHtml;
 }
 render();
