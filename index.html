@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 4 Project</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav class="nav-bar">
         <div class="row">
@@ -16,7 +18,7 @@
                 <ul class="nav__links">
                     <li class="nav__link"><a href="/index.html">Home</a></li>
                     <li class="nav__link"><a href="/results.html">Find a movie</a></li>
-                    <li class="nav__link"><button class="nav__link--boop">Contact</button></li>
+                    <li class="nav__link"><button class="nav__link--boop click">Contact</button></li>
                 </ul>
             </div>
         </div>
@@ -27,8 +29,12 @@
                 <h1 class="section__title"><span class="color-text">Your next movie is just a click away!</span></h1>
                 <h2 class="section__sub-title">What are you <span class="color-text"> waiting</span> for?</h2>
                 <div class="search--container">
-                    <input type="text" placeholder="What are you in the mood for?" class="search--input"> <button class="search--boop">boop</button>
+                    <form action="search-bar" class="search-bar">
+                        <input type="text" placeholder="What are you in the mood for?" class="search--input">
+                        <div id="clear" class="none button clear" role="button"><i class="fa-times"></i></div>
+                        <button class="search--boop click">boop</button>
                 </div>
+                </form>
                 <figure class="landing__img--wrapper">
                     <img src="/assets/undraw_movie.svg" alt="" class="landing__img">
                 </figure>
@@ -37,4 +43,5 @@
     </section>
     <script src="/index.js"></script>
 </body>
+
 </html>
