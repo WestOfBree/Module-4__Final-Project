@@ -1,16 +1,11 @@
 //http://www.omdbapi.com/?i=tt3896198&apikey=29e531e2
 let movie;
 let moviesData = [];
+const searchInput = document.querySelector(".search--input");
 const movieCard = document.querySelector(".results__container");
 const form = document.querySelector(".search-bar");
-const searchInput = document.querySelector("#search--input");
+
 let debounceTimeout;
-console.log("#search--input:", movieCard);
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-    const query = searchInput.value.trim();
-    console.log(query);
-});
 
 searchInput.addEventListener('keyup', (element) => {
   clearTimeout(debounceTimeout);
@@ -58,4 +53,4 @@ async function render(query) {
 // render();
 setTimeout(() => {
   render();
-}, 1000);
+});
