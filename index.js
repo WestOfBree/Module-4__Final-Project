@@ -4,8 +4,50 @@ let moviesData = [];
 const searchInput = document.querySelector(".search--input");
 const movieCard = document.querySelector(".results__container");
 const form = document.querySelector(".search-bar");
-
+const sliderBar = document.querySelector("#results__slider--input");
+const sliderCurrent = document.querySelector("#results__slider--current");
 let debounceTimeout;
+const query = localStorage.getItem("query");
+
+
+// SLIDING FILTER FUNCTION
+
+sliderBar.oninput = function() {
+  sliderCurrent.innerHTML = this.value;
+  moviesDataFiltered = moviesData.Search.filter(movie => movie.Year <= this.value);
+  if (moviesDataFiltered.length > 0) {
+    const movieCardHtml = moviesDataFiltered.map((movie) => {
+      return `<div class="movie-card">
+                        <div class="movie__poster"><img src="${movie.Poster}" class="movie__poster-img" alt=""></div>
+                        <div class="movie__name">${movie.Title}</div>
+                        <div class="movie__rating">${movie.Year}</div>
+                    </div>`;
+    }).join("");
+    movieCard.innerHTML = movieCardHtml;
+  } else {
+    movieCard.innerHTML = "<p>No movies found for the selected year range.</p>";
+  } 
+};
+
+
+// SEARCH FUNCTION
+
+
+async function onSearchChange(event){
+const query = (event.target.value)
+    render(query)
+}
+
+function redirectToResults(query){
+  
+    localStorage.setItem("query", query)
+    window.location.href = 'results.html';
+}
+
+// Clears the query from localStorage when the page is unloaded to prevent stale bread
+// window.addEventListener('beforeunload', () => {
+//   localStorage.removeItem("query");
+// });
 
 searchInput.addEventListener('keyup', (element) => {
   clearTimeout(debounceTimeout);
@@ -18,6 +60,11 @@ searchInput.addEventListener('keyup', (element) => {
     }
   }, 400);
 });
+
+
+
+// RENDER FUNCTION
+
 
 async function render(query) {
   if (!query || query.length === 0) {
@@ -50,7 +97,12 @@ async function render(query) {
     movieCard.innerHTML = "<p>An error occurred. Please try again later.</p>";
   }
 }
-// render();
+
 setTimeout(() => {
   render();
 });
+
+// TBA function to handle contact button 
+function dontClickThat() {
+  alert("Don't click that! This is a demo site.");
+} 

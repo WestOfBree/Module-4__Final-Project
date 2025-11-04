@@ -16,9 +16,9 @@
                     <img src="/assets/cat_logo.svg" class="nav__logo" alt="">
                 </figure>
                 <ul class="nav__links">
-                    <li class="nav__link "><a href="/index.html"class="link__hover">Home</a></li>
-                    <li class="nav__link "><a href="/results.html" class="link__hover">Find a movie</a></li>
-                    <li class="nav__link "><button class="nav__link--boop click">Contact</button></li>
+                    <li class="nav__link "><a href="/index.html"class="link__hover link__hover--red">Home</a></li>
+                    <li class="nav__link "><a href="/results.html" class="link__hover link__hover--red">Find a movie</a></li>
+                    <li class="nav__link "><button class="nav__link--boop click" onclick="dontClickThat()">Contact</button></li>
                 </ul>
             </div>
         </div>
@@ -30,8 +30,8 @@
                 <h2 class="section__sub-title">What are you<span class="color-text"> waiting </span> for?</h2>
                 <div class="search--container">
                     <form action="results.html" class="search-bar">
-                        <input type="text" placeholder="What are you in the mood for?" id="search--input">
-                        <div id="clear" class="none button clear" role="button"><i class="fa-times"></i></div>
+                        <input type="text" placeholder="What are you in the mood for?" id="search--input"  onsubmit="redirectToResults()">
+                        <div id="clear" class="none button clear query" role="button"><i class="fa-times"></i></div>
                         <button class="search--boop click" type="submit">boop</button>
                 </div>
                 </form>
@@ -41,7 +41,7 @@
             </div>
         </div>
     </section>
-    <script src="/index.js"></script>
+    <script src="/index.js" defer></script>
 </body>
 
 </html>

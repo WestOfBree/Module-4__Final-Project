@@ -18,14 +18,18 @@
 
                 </figure>
                 <ul class="nav__links">
-                    <li class="nav__link"><a href="/index.html" class="results">Home</a></li>
-                    <li class="nav__link"><a href="/results.html" class="results">Find a movie</a></li>
-                    <li class="nav__link"><button class="nav__link--boop">Contact</button></li>
+                    <li class="nav__link"><a href="/index.html" class="results link__hover link__hover--white">Home</a>
+                    </li>
+                    <li class="nav__link"><a href="/results.html" class="results link__hover link__hover--white">Find a
+                            movie</a></li>
+                    <li class="nav__link"><button class="nav__link--boop click" onclick="dontClickThat()">Contact</button></li>
                 </ul>
     </nav>
-    <h2 class="section__sub-title">What are you <span class="color-text"> waiting </span> for?</h2>
+
     <div class="search--container">
-        <input type="text" placeholder="What are you in the mood for?" class="search--input"> 
+        <h2 class="section__sub-title">What are you <span class="color-text"> waiting </span> for?</h2>
+        <input type="text" placeholder="Search by title" class="search--input" id="query"
+            onchange="onSearchChange(event)">
         <!-- <button class="search--boop click" onclick="render()">boop</button> -->
     </div>
     <div class="background__overlay"></div>
@@ -33,19 +37,48 @@
     </div>
 
     <section id="movies">
-        <div class="row">
+
+        <div class="row movies__row">
+            <h2 class="section__sub-title results__sub-title">Results</h2>
+            <div class="results__slider">
+                <input type="range" name="" id="results__slider--input" min="1900" max="2023" value="2023"
+                    oninput="updateYearSlider(this.value)">
+                <span id="results__slider--current">2023</span>
+            </div>
             <div class="results__container">
+
                 <div class="movie-card">
-                    <!-- made the image error on purpose -->
-                    <div class="movie__poster"><img src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680" alt="movie poster"></div>
+                    <div class="movie__poster"><img
+                            src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
+                            alt="movie poster"></div>
                     <div class="movie__name">Insert Movie Name</div>
                     <div class="movie__rating">Rating</div>
                 </div>
-                
+                 <div class="movie-card">
+                    <div class="movie__poster"><img
+                            src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
+                            alt="movie poster"></div>
+                    <div class="movie__name">Insert Movie Name</div>
+                    <div class="movie__rating">Rating</div>
+                </div>
+                 <div class="movie-card">
+                    <div class="movie__poster"><img
+                            src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
+                            alt="movie poster"></div>
+                    <div class="movie__name">Insert Movie Name</div>
+                    <div class="movie__rating">Rating</div>
+                </div>
+                 <div class="movie-card">
+                    <div class="movie__poster"><img
+                            src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
+                            alt="movie poster"></div>
+                    <div class="movie__name">Insert Movie Name</div>
+                    <div class="movie__rating">Rating</div>
+                </div>
             </div>
         </div>
     </section>
-    <script src="/index.js"></script>
+    <script src="/index.js" defer></script>
 </body>
 
 </html>
