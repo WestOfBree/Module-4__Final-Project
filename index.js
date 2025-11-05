@@ -62,6 +62,21 @@ searchInput.addEventListener('keyup', (element) => {
 });
 
 
+// SMALL SCREEN MENU FUNCTION
+
+
+
+function toggleMenu(){
+    
+    
+    if (isMenuOpen){
+        isMenuOpen = false;
+        return document.body.classList.remove("menu--open")
+    }
+     isMenuOpen = !isMenuOpen;
+    document.body.classList +=" menu--open";
+}
+
 
 // RENDER FUNCTION
 
