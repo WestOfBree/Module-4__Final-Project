@@ -1,6 +1,7 @@
 //http://www.omdbapi.com/?i=tt3896198&apikey=29e531e2
 let movie;
 let moviesData = [];
+let isMenuOpen = false;
 const searchInput = document.querySelector(".search--input");
 const movieCard = document.querySelector(".results__container");
 const form = document.querySelector(".search-bar");
