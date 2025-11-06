@@ -6,6 +6,7 @@
     list-style: none;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
+    scrollbar-width: none;
 }
 /* 
 
@@ -29,6 +30,7 @@ img{
 .section__title,
 .section__sub-title{
     line-height: 1.5;
+    text-align: center;
 }
 .section__sub-title{
     font-size: 32px;
@@ -99,6 +101,7 @@ input{
   left: 0;
   width: 100%;
 }
+
 /* 
 
 NAV  STYLES
@@ -106,7 +109,7 @@ NAV  STYLES
 */
 nav{
     height: 100px;
-    padding: 20px 50px;
+    padding: 20px;  
 }
 .nav__container{
     display: flex;
@@ -175,7 +178,7 @@ nav{
   background-color: rgba(36, 0, 71, .83);
 }
 .nav__menu--boop{
-    display: hidden;
+    display: none;
     font-size: 25px;
     background: darkred;
     color: white;
@@ -228,6 +231,9 @@ padding: 12px;
 }
 .search-bar{
     display: flex;
+}
+#movies{
+    min-height: 500px;
 }
 /*
 Small screen menu bar styles
@@ -358,6 +364,121 @@ scale: calc(1.1);
 
 /*
 
+FOOTER
+
+*/
+
+/* 
+
+Footer Styles
+
+*/
+main{
+  margin-bottom: 96px;
+}
+footer {
+  padding: 66px 32px;
+  background-color: #242424;
+  margin-bottom: -32px;
+  position: relative;
+  overflow: hidden;
+}
+.footer__columns {
+  margin-top: -48px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.footer__column {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+.footer__column--title {
+  color: #f7fafc;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.footer__column--link {
+  color: #f7fafc;
+  font-size: 14px;
+  margin-top: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  position: relative;
+}
+.footer__column--link:nth-child(2) {
+  margin-top: 24px;
+}
+.footer__divider {
+  width: 100%;
+  height: 2px;
+  margin: 44px 0;
+  background: darkred;
+}
+.footer__bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__logo{
+  display: flex;
+  align-items: center;
+}
+.footer__logo--img{
+  height: 80px;
+  width: 120px;
+}
+.footer__logo--text{
+  font-size: 20px;
+  color: #f7fafc;
+  font-weight: 900;
+  margin-left: 8px;
+  letter-spacing: 0.05em;
+}
+.footer__copyright{
+  color: #cbd5e0;
+  font-weight: 500;
+}
+.footer__socials{
+  display: flex;
+  align-items: center;
+  margin-left: -16px;
+}
+.footer__social--link{
+  margin-left: 16px;
+  padding: 8px;
+  background: #f7fafc;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 2;
+transition: all 300ms ease;
+color: darkred;
+}
+.footer__column--link:after{
+  content: "";
+  position:absolute;
+  left:0;
+  bottom: -6px;;
+  background: #fff;
+  height: 2px;
+  width: 100%;
+  transition: all 300ms ease;
+  opacity: 0;
+}
+.footer__column--link:hover::after{
+  opacity: 1;
+}
+.footer__social--link:hover{
+background-color: rgba(203, 213, 224);
+}
+
+
+/*
+
 MEDIA QUERIES
 
 */
@@ -383,34 +504,66 @@ MEDIA QUERIES
 /* tablets in landscape mode and up */
 
 @media (max-width:768px){
+    nav{
+        padding: 20px 0px;
+    }
     .nav__menu--boop{
-        display: visible;
+        display: block;
     }
     .nav__link{
         display: none;
     }
+        input{
+        max-width: 400px;
+        line-height: 30px;
+        height: 50px;
+    }
     .search--container{
         margin: 16px;
     }
+     .results__container{
+        max-width: 600px;
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+       
+    }
+    .results__slider{
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-/* tablets in portrait mode and up
+/* tablets in portrait mode and up*/
 
- */
-/*
 @media (max-width:600px){
-    .movie-card{
-        max-width: calc(100% / 2);
+    .landing__container{
+        margin: 40px 0;
+
     }
-    
+
+    .section__title{
+        font-size: 32px;
+    }
+    .section__sub-title{
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+   
+    .movie-card{
+       max-width: 100%;
+    }
+    .landing__img--wrapper{
+        margin: 16px 0;
+    }
 }
 
 /* mobile devices in landscape mode and up */
 /*
 @media (max-width:480px){
-    .movie-card{
-       width: 100%;
-    }
+    
   
 }
 */

@@ -17,25 +17,28 @@
                     <img src="/assets/cat_logo.svg" class="nav__logo" alt="">
                 </figure>
                 <ul class="nav__links">
-                    <li class="nav__link"><a href="/index.html"class="nav__link link__hover link__hover--red">Home</a></li>
-                    <li class="nav__link"><a href="/results.html" class="nav__link link__hover link__hover--red">Find a movie</a></li>
-                    <li class="nav__link"><button class="nav__link--boop click" onclick="dontClickThat()">Contact</button></li>
+                    <li class="nav__link"><a href="/index.html" class="nav__link link__hover link__hover--red">Home</a>
+                    </li>
+                    <li class="nav__link"><a href="/results.html" onclick="render(query)"
+                            class="nav__link link__hover link__hover--red">Find a movie</a></li>
+                    <li class="nav__link"><button class="nav__link--boop click"
+                            onclick="dontClickThat()">Contact</button></li>
                 </ul>
                 <button class="nav__menu--boop click" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
                 <div class="menu__backdrop">
-                        <button class="menu__close" onclick="toggleMenu()"><i class="fa-solid fa-times"></i></button>
-                        <ul class="menu__list">
-                             <li class="menu__link">
-                                <a href="" onclick="toggleMenu()">Home</a>
-                            </li>
-                             <li class="menu__link">
-                                <a href="#pricing" onclick="toggleMenu()" >Movies</a>
-                            </li>
-                             <li class="menu__link">
-                                <a href="" onclick="dontClickThat()">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <button class="menu__close" onclick="toggleMenu()"><i class="fa-solid fa-times"></i></button>
+                    <ul class="menu__list">
+                        <li class="menu__link">
+                            <a href="" onclick="toggleMenu()">Home</a>
+                        </li>
+                        <li class="menu__link">
+                            <a href="/results.html" onclick="render(query);toggleMenu()">Movies</a>
+                        </li>
+                        <li class="menu__link">
+                            <a href="" onclick="dontClickThat()">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,8 +49,8 @@
                 <h2 class="section__sub-title">What are you<span class="color-text"> waiting </span> for?</h2>
                 <div class="search--container">
                     <form action="results.html" class="search-bar">
-                        <input type="text" placeholder="What are you in the mood for?" id="search--input"  onsubmit="redirectToResults()">
-                        <div id="clear" class="none button clear query" role="button"><i class="fa-times"></i></div>
+                        <input type="text" placeholder="What are you in the mood for?" id="search--input"
+                            onsubmit="redirectToResults();render(query)">
                         <button class="search--boop click" type="submit">boop</button>
                 </div>
                 </form>
@@ -57,6 +60,54 @@
             </div>
         </div>
     </section>
+     <!-- FOOTER SECTION  -->   
+
+    <footer>
+        <div class="row footer__row">
+            <div class="footer__columns">
+                <div class="footer__column">
+                    <div class="footer__column--title">MAIN</div>
+                    <a href="" class="footer__column--link no-cursor">Blog</a>
+                    <a href="" class="footer__column--link no-cursor">FAQs</a>
+                    <a href="" class="footer__column--link no-cursor">Support</a>
+                    <a href="" class="footer__column--link no-cursor">About Us</a>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__column--title">PRESS</div>
+                    <a href="" class="footer__column--link no-cursor">Logos</a>
+                    <a href="" class="footer__column--link no-cursor">Events</a>
+                    <a href="" class="footer__column--link no-cursor">Stories</a>
+                    <a href="" class="footer__column--link no-cursor">Office</a>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__column--title">TEAM</div>
+                    <a href="" class="footer__column--link no-cursor">Career</a>
+                    <a href="" class="footer__column--link no-cursor">Founders</a>
+                    <a href="" class="footer__column--link no-cursor">Culture</a>
+                    <a href="" class="footer__column--link no-cursor">Onboarding</a>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__column--title">LEGAL</div>
+                    <a href="" class="footer__column--link no-cursor">GDPR</a>
+                    <a href="" class="footer__column--link no-cursor">Privacy Policy</a>
+                    <a href="" class="footer__column--link no-cursor">Terms of Service</a>
+                    <a href="" class="footer__column--link no-cursor">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__bottom">
+                <div class="footer__logo">
+                    <img src="./assets/cat_logo.svg" alt="" class="footer__logo--img">
+
+                </div>
+                <div class="footer__socials">
+                    <a href="" class="footer__social--link no-cursor"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="" class="footer__social--link no-cursor"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="" class="footer__social--link no-cursor"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="/index.js" defer></script>
 </body>
 

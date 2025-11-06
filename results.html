@@ -26,6 +26,20 @@
                     <li class="nav__link"><button class="nav__link--boop click" onclick="dontClickThat()">Contact</button></li>
                         <button class="nav__menu--boop click" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
                 </ul>
+                <div class="menu__backdrop">
+                        <button class="menu__close" onclick="toggleMenu()"><i class="fa-solid fa-times"></i></button>
+                        <ul class="menu__list">
+                             <li class="menu__link">
+                                <a href="./index.html" onclick="toggleMenu()">Home</a>
+                            </li>
+                             <li class="menu__link">
+                                <a href="/results.html" onclick="render(query);toggleMenu()" >Movies</a>
+                            </li>
+                             <li class="menu__link">
+                                <a href="" onclick="dontClickThat()">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
     </nav>
 
     <div class="search--container">
@@ -80,6 +94,53 @@
             </div>
         </div>
     </section>
+     <!-- FOOTER SECTION  -->   
+
+    <footer>
+        <div class="row footer__row">
+            <div class="footer__columns">
+                <div class="footer__column">
+                    <div class="footer__column--title">MAIN</div>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Blog</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">FAQs</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Support</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">About Us</a>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__column--title">PRESS</div>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Logos</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Events</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Stories</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Office</a>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__column--title">TEAM</div>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Career</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Founders</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Culture</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Onboarding</a>
+                </div>
+                <div class="footer__column">
+                    <div class="footer__column--title">LEGAL</div>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">GDPR</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Privacy Policy</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Terms of Service</a>
+                    <a href="" class="footer__column--link"onclick="dontClickThat()">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer__divider"></div>
+            <div class="footer__bottom">
+                <div class="footer__logo">
+                    <img src="./assets/cat_logo.svg" alt="" class="footer__logo--img">
+                </div>
+                <div class="footer__socials">
+                    <a href="" class="footer__social--link"onclick="dontClickThat()"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="" class="footer__social--link"onclick="dontClickThat()"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="" class="footer__social--link"onclick="dontClickThat()"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="/index.js" defer></script>
 </body>
 
