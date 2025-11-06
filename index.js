@@ -70,6 +70,31 @@ form.addEventListener("submit", (e) => {
 }
 });
 
+if (searchInput && movieCard) {
+
+  searchInput.addEventListener('keyup', (element) => {
+
+    clearTimeout(debounceTimeout);
+
+    debounceTimeout = setTimeout(() => {
+
+      const q = element.target.value.trim();
+
+      if (q.length > 0) {
+
+        render(q);
+
+      } else {
+
+        movieCard.innerHTML = "<p>Please enter a search term.</p>";
+
+      }
+
+    }, 400);
+
+  });
+
+}
 // searchInput.addEventListener('keyup', (element) => {
 //   clearTimeout(debounceTimeout);
 //   debounceTimeout = setTimeout(() => {
@@ -174,9 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("query", q);
 
       });
-
     }
-
   }
 
   // Results page: hydrate input and render from localStorage
