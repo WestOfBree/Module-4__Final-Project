@@ -2,13 +2,15 @@
 let movie;
 let moviesData = [];
 let isMenuOpen = false;
-const searchInput = document.querySelector(".search--input");
+const searchInput = document.querySelector("#search--input");
 const movieCard = document.querySelector(".results__container");
 const form = document.querySelector(".search-bar");
 const sliderBar = document.querySelector("#results__slider--input");
 const sliderCurrent = document.querySelector("#results__slider--current");
 let debounceTimeout;
-const query = localStorage.getItem("query");
+// const query = localStorage.getItem("query");
+const currentQuery = localStorage.getItem("query");
+
 
 
 // SLIDING FILTER FUNCTION
@@ -43,12 +45,21 @@ function redirectToResults(query){
   
     localStorage.setItem("query", query)
     window.location.href = 'results.html';
+
 }
 
-// Clears the query from localStorage when the page is unloaded to prevent stale bread
-// window.addEventListener('beforeunload', () => {
-//   localStorage.removeItem("query");
-// });
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const q = searchInput.value.trim();
+  if (!q) return;
+  localStorage.setItem("query", q);
+  window.location.href = "results.html";
+  if (movieCard && currentQuery) {
+  searchInput.value = currentQuery;
+  render(currentQuery);
+}
+});
 
 searchInput.addEventListener('keyup', (element) => {
   clearTimeout(debounceTimeout);
@@ -85,6 +96,9 @@ function toggleMenu(){
 async function render(query) {
   if (!query || query.length === 0) {
     movieCard.innerHTML = "<p>Please enter a search term.</p>";
+    return;
+  }
+  if (!movieCard) {
     return;
   }
   try {
