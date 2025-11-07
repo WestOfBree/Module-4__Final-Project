@@ -96,7 +96,7 @@ function toggleMenu(){
 setTimeout(function(){
   loading.style.display = 'none';
   loading.style.opacity = '0';  
-}, 1000);
+}, 2000);
 // RENDER FUNCTION
 
 
