@@ -1,6 +1,7 @@
 let movie;
 let moviesData = [];
 let isMenuOpen = false;
+let loading = document.getElementById('loading-screen');
 const searchInput = document.querySelector(".search--input");
 const movieCard = document.querySelector(".results__container");
 const form = document.querySelector(".search-bar");
@@ -89,6 +90,13 @@ function toggleMenu(){
 }
 
 
+// LOADING SCREEN FUNCTION
+
+
+setTimeout(function(){
+  loading.style.display = 'none';
+  loading.style.opacity = '0';  
+}, 1000);
 // RENDER FUNCTION
 
 
@@ -151,6 +159,7 @@ setTimeout(() => {
       movieCard.innerHTML = "<p>Please enter a search term.</p>";
     }
   }
+  console.log(query);
 }, 0);
 
 // TBA function to handle contact button 

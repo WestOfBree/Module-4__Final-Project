@@ -7,15 +7,18 @@
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 /* 
 
 GENERAL STYLES
 
 */
-/* form{
-    width: 100%;
-} */
+
+ html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 img{
     width: 100%;
     height: 100%;
@@ -23,9 +26,11 @@ img{
 
 .row{
     padding: 0 32px;
+    max-width: 2040px;
 }
 .container{
     margin: 20px 0;
+    max-width: 2040px;
 }
 .section__title,
 .section__sub-title{
@@ -189,11 +194,8 @@ nav{
     position: absolute;
     right: 0;
 }
-/* .fa-bars{
-    color: #fff;
-    font-size: 25px;
-} */
-/* 
+
+/*
 
 LANDING  STYLES
 
@@ -235,6 +237,50 @@ padding: 12px;
 #movies{
     min-height: 500px;
 }
+.backToTop {
+  position: fixed;
+  height: 70px;
+  width: 70px;
+  font-size: 32px;
+  background-color: #242424;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  bottom: 32px;
+  right: 40px;
+  z-index: 1;
+}
+
+/*
+
+LOADING STYLES
+
+*/
+
+#loading-screen{
+    position: fixed;
+    top: 350px;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: all 300ms ease;
+}
+.loading-icon{
+    font-size: 80px;
+    color: darkred;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /*
 Small screen menu bar styles
 */
@@ -513,10 +559,14 @@ MEDIA QUERIES
     .nav__link{
         display: none;
     }
+    #landing{
+      margin-top: 80px;
+    }
         input{
         max-width: 400px;
         line-height: 30px;
         height: 50px;
+        font-size: 16px;
     }
     .search--container{
         margin: 16px;
@@ -539,11 +589,16 @@ MEDIA QUERIES
 /* tablets in portrait mode and up*/
 
 @media (max-width:600px){
-    .landing__container{
+    .container{
         margin: 40px 0;
 
     }
-
+    #landing {
+        height: auto;
+    }
+#movies{
+    margin-top: 30px;
+}
     .section__title{
         font-size: 32px;
     }

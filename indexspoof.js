@@ -58,17 +58,17 @@ function redirectToResults(query) {
   window.location.href = "results.html";
 }
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const q = searchInput.value.trim();
-  if (!q) return;
-  localStorage.setItem("query", q);
-  window.location.href = "results.html";
-  if (movieCard && currentQuery) {
-    searchInput.value = currentQuery;
-    render(currentQuery);
-  }
-});
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const q = searchInput.value.trim();
+//   if (!q) return;
+//   localStorage.setItem("query", q);
+//   window.location.href = "results.html";
+//   if (movieCard && currentQuery) {
+//     searchInput.value = currentQuery;
+//     render(currentQuery);
+//   }
+// });
 
 if (searchInput && movieCard) {
   searchInput.addEventListener("keyup", (element) => {

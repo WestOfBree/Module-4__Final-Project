@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 4 Project</title>
     <link rel="stylesheet" href="styles.css">
-     <script src="https://kit.fontawesome.com/bb4761e2f4.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/bb4761e2f4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,26 +23,28 @@
                     </li>
                     <li class="nav__link"><a href="/results.html" class="results link__hover link__hover--white">Find a
                             movie</a></li>
-                    <li class="nav__link"><button class="nav__link--boop click" onclick="dontClickThat()">Contact</button></li>
-                        <button class="nav__menu--boop click" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+                    <li class="nav__link"><button class="nav__link--boop click"
+                            onclick="dontClickThat()">Contact</button></li>
+                    <button class="nav__menu--boop click" onclick="toggleMenu()"><i
+                            class="fa-solid fa-bars"></i></button>
                 </ul>
                 <div class="menu__backdrop">
-                        <button class="menu__close" onclick="toggleMenu()"><i class="fa-solid fa-times"></i></button>
-                        <ul class="menu__list">
-                             <li class="menu__link">
-                                <a href="./index.html" onclick="toggleMenu()">Home</a>
-                            </li>
-                             <li class="menu__link">
-                                <a href="/results.html" onclick="render(query);toggleMenu()" >Movies</a>
-                            </li>
-                             <li class="menu__link">
-                                <a href="" onclick="dontClickThat()">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <button class="menu__close" onclick="toggleMenu()"><i class="fa-solid fa-times"></i></button>
+                    <ul class="menu__list">
+                        <li class="menu__link">
+                            <a href="./index.html" onclick="toggleMenu()">Home</a>
+                        </li>
+                        <li class="menu__link">
+                            <a href="/results.html" onclick="render(query);toggleMenu()">Movies</a>
+                        </li>
+                        <li class="menu__link">
+                            <a href="" onclick="dontClickThat()">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
     </nav>
 
-    <div class="search--container">
+    <div class="container search--container">
         <h2 class="section__sub-title">What are you <span class="color-text"> waiting </span> for?</h2>
         <input type="text" placeholder="Search by title" class="search--input" id="query"
             onchange="onSearchChange(event)">
@@ -56,13 +58,19 @@
 
         <div class="row movies__row">
             <h2 class="section__sub-title results__sub-title">Results</h2>
+            <div id="loading-screen">
+                <i class="fa-solid fa-fish loading-icon"></i>
+            </div>
             <div class="results__slider">
                 <input type="range" name="" id="results__slider--input" min="1900" max="2023" value="2023"
                     oninput="updateYearSlider(this.value)">
                 <span id="results__slider--current">2023</span>
             </div>
+              <a href="#">
+                    <button class="backToTop click" ><i class="fa-solid fa-arrow-up"></i></button>
+                </a>
             <div class="results__container">
-
+              
                 <div class="movie-card">
                     <div class="movie__poster"><img
                             src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
@@ -70,21 +78,21 @@
                     <div class="movie__name">Insert Movie Name</div>
                     <div class="movie__rating">Rating</div>
                 </div>
-                 <div class="movie-card">
+                <div class="movie-card">
                     <div class="movie__poster"><img
                             src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
                             alt="movie poster"></div>
                     <div class="movie__name">Insert Movie Name</div>
                     <div class="movie__rating">Rating</div>
                 </div>
-                 <div class="movie-card">
+                <div class="movie-card">
                     <div class="movie__poster"><img
                             src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
                             alt="movie poster"></div>
                     <div class="movie__name">Insert Movie Name</div>
                     <div class="movie__rating">Rating</div>
                 </div>
-                 <div class="movie-card">
+                <div class="movie-card">
                     <div class="movie__poster"><img
                             src="https://www.movieposters.com/cdn/shop/files/scan_77bc93d2-a1cb-4d8c-826f-87e8add6f9ff.jpg?v=1761837463&width=1680"
                             alt="movie poster"></div>
@@ -94,38 +102,38 @@
             </div>
         </div>
     </section>
-     <!-- FOOTER SECTION  -->   
+    <!-- FOOTER SECTION  -->
 
     <footer>
         <div class="row footer__row">
             <div class="footer__columns">
                 <div class="footer__column">
                     <div class="footer__column--title">MAIN</div>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Blog</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">FAQs</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Support</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">About Us</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Blog</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">FAQs</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Support</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">About Us</a>
                 </div>
                 <div class="footer__column">
                     <div class="footer__column--title">PRESS</div>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Logos</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Events</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Stories</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Office</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Logos</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Events</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Stories</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Office</a>
                 </div>
                 <div class="footer__column">
                     <div class="footer__column--title">TEAM</div>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Career</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Founders</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Culture</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Onboarding</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Career</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Founders</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Culture</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Onboarding</a>
                 </div>
                 <div class="footer__column">
                     <div class="footer__column--title">LEGAL</div>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">GDPR</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Privacy Policy</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Terms of Service</a>
-                    <a href="" class="footer__column--link"onclick="dontClickThat()">Disclaimer</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">GDPR</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Privacy Policy</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Terms of Service</a>
+                    <a href="" class="footer__column--link" onclick="dontClickThat()">Disclaimer</a>
                 </div>
             </div>
             <div class="footer__divider"></div>
@@ -134,9 +142,12 @@
                     <img src="./assets/cat_logo.svg" alt="" class="footer__logo--img">
                 </div>
                 <div class="footer__socials">
-                    <a href="" class="footer__social--link"onclick="dontClickThat()"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="" class="footer__social--link"onclick="dontClickThat()"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="" class="footer__social--link"onclick="dontClickThat()"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="" class="footer__social--link" onclick="dontClickThat()"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="" class="footer__social--link" onclick="dontClickThat()"><i
+                            class="fa-brands fa-twitter"></i></a>
+                    <a href="" class="footer__social--link" onclick="dontClickThat()"><i
+                            class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
